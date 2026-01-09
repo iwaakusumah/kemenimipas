@@ -1,5 +1,5 @@
 .text-justify {
-  text-align: justify;
+    text-align: justify;
 }
 
 /*** Spinner Start ***/
@@ -200,8 +200,10 @@
 
 /*** Navbar Clean Version ***/
 .navbar {
-    box-shadow: none !important; /* hilangkan shadow */
-    border-bottom: none !important; /* hilangkan border */
+    box-shadow: none !important;
+    /* hilangkan shadow */
+    border-bottom: none !important;
+    /* hilangkan border */
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -214,7 +216,8 @@
     padding: 10px 0;
     margin-right: 15px;
     color: var(--bs-primary) !important;
-    white-space: nowrap; /* cegah teks turun */
+    white-space: nowrap;
+    /* cegah teks turun */
     transition: 0.3s;
 }
 
@@ -240,7 +243,9 @@
     max-height: 45px;
 }
 
-/* Dropdown arrow */
+/* =====================================================
+   DROPDOWN ARROW
+   ===================================================== */
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -251,17 +256,43 @@
     vertical-align: middle;
 }
 
-/* Dropdown menu */
-.navbar .nav-item:hover .dropdown-menu {
-    transform: rotateX(0deg);
-    visibility: visible;
+/* =====================================================
+   DROPDOWN MENU (UMUM)
+   ===================================================== */
+.navbar .dropdown-menu {
     background: var(--bs-light) !important;
-    transition: 0.5s;
-    opacity: 1;
+    border: 0;
+    border-radius: 10px;
     font-size: 12px;
+    padding: 8px 0;
+
+    /* 🔑 ANTI KEPANJANGAN */
+    max-width: 340px;
+    min-width: 280px;
 }
 
-/* Dropdown hidden initially (desktop) */
+/* =====================================================
+   DROPDOWN ITEM (TEKS RAPI)
+   ===================================================== */
+.navbar .dropdown-menu .dropdown-item {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.35;
+    padding: 8px 16px;
+    color: var(--bs-dark);
+}
+
+/* =====================================================
+   DROPDOWN HOVER EFFECT
+   ===================================================== */
+.dropdown .dropdown-menu a:hover {
+    background: var(--bs-primary);
+    color: var(--bs-warning);
+}
+
+/* =====================================================
+   DROPDOWN ANIMATION (DESKTOP)
+   ===================================================== */
 @media (min-width: 1200px) {
     .navbar .nav-item .dropdown-menu {
         display: block;
@@ -269,38 +300,66 @@
         top: 100%;
         transform: rotateX(-75deg);
         transform-origin: 0% 0%;
-        border: 0;
-        border-radius: 10px;
         transition: 0.5s;
         opacity: 0;
-        font-size: 12px;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        opacity: 1;
     }
 }
 
-/* Dropdown hover effect */
-.dropdown .dropdown-menu a:hover {
-    background: var(--bs-primary);
-    color: var(--bs-warning);
+/* =====================================================
+   NAVBAR LINK (DESKTOP TETAP SATU BARIS)
+   ===================================================== */
+.navbar-nav .nav-link {
+    white-space: nowrap;
 }
 
-/* Mobile responsive */
+/* =====================================================
+   MOBILE RESPONSIVE
+   ===================================================== */
 @media (max-width: 991.98px) {
+
+    /* Sticky fix */
     .sticky-top {
         position: relative;
         background: var(--bs-white);
     }
 
+    /* Dropdown full width */
+    .navbar .dropdown-menu {
+        max-width: 100%;
+        min-width: 100%;
+        border-radius: 6px;
+    }
+
+    /* Teks dropdown mobile */
+    .navbar .dropdown-menu .dropdown-item {
+        font-size: 13px;
+    }
+
+    /* Nav link boleh turun baris */
+    .navbar-nav .nav-link {
+        white-space: normal;
+    }
+
+    /* Navbar toggler */
     .navbar.navbar-expand-lg .navbar-toggler {
         padding: 10px 20px;
         border: 1px solid var(--bs-primary) !important;
         color: var(--bs-primary);
     }
 
+    /* Collapse area */
     .navbar-light .navbar-collapse {
         margin-top: 15px;
-        border-top: none; /* hilangkan garis mobile */
+        border-top: none;
     }
 
+    /* Mobile nav link */
     .navbar-light .navbar-nav .nav-link,
     .sticky-top .navbar-light .navbar-nav .nav-link {
         padding: 10px 0;
@@ -308,10 +367,12 @@
         color: var(--bs-dark) !important;
     }
 
+    /* Logo */
     .navbar-light .navbar-brand img {
         max-height: 45px;
     }
 }
+
 
 /* Nonaktifkan garis pseudo-element (hover effect garis atas/bawah) */
 .navbar-light .navbar-nav .nav-link::before,
@@ -336,16 +397,21 @@
 
 /*** Carousel Autoplay Only Start ***/
 .carousel-header {
-    max-width: 1200px;     /* Batasi lebar carousel */
-    margin: 40px auto;     /* Center + jarak atas-bawah */
-    border-radius: 18px;   /* Sudut membulat */
-    overflow: hidden;      /* Agar gambar rapi */
+    max-width: 1200px;
+    /* Batasi lebar carousel */
+    margin: 40px auto;
+    /* Center + jarak atas-bawah */
+    border-radius: 18px;
+    /* Sudut membulat */
+    overflow: hidden;
+    /* Agar gambar rapi */
 }
 
 /* Set tinggi carousel */
 .carousel-header .carousel-inner .carousel-item {
     position: relative;
-    min-height: 45vh;      /* Tinggi proporsional */
+    min-height: 45vh;
+    /* Tinggi proporsional */
 }
 
 /* Gambar full cover */
@@ -393,6 +459,7 @@
 .carousel-fade .carousel-item.active img {
     transform: scale(1);
 }
+
 /*** Carousel Autoplay Only End ***/
 
 
@@ -513,6 +580,7 @@
 .contact .office .office-item .office-content a.text-secondary:hover {
     color: var(--bs-primary) !important;
 }
+
 /*** Contact End ***/
 
 /*** Footer Start ***/
