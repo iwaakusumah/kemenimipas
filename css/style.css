@@ -303,11 +303,10 @@
         transform-origin: 0% 0%;
         transition: 0.5s;
         opacity: 0;
-
-        /* BATASI DAN GESER */
-        max-width: 340px;       /* optional: agar tidak terlalu lebar */
-        left: auto;             /* reset default */
-        right: 0;               /* geser dropdown ke kiri supaya tidak keluar layar */
+        max-width: 340px;      
+        left: auto;            
+        right: 0;      
+        text-align: right;        
     }
 
     /* Hover effect */
