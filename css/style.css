@@ -294,6 +294,7 @@
    DROPDOWN ANIMATION (DESKTOP)
    ===================================================== */
 @media (min-width: 1200px) {
+    /* Dropdown default hidden */
     .navbar .nav-item .dropdown-menu {
         display: block;
         visibility: hidden;
@@ -302,8 +303,14 @@
         transform-origin: 0% 0%;
         transition: 0.5s;
         opacity: 0;
+
+        /* BATASI DAN GESER */
+        max-width: 340px;       /* optional: agar tidak terlalu lebar */
+        left: auto;             /* reset default */
+        right: 0;               /* geser dropdown ke kiri supaya tidak keluar layar */
     }
 
+    /* Hover effect */
     .navbar .nav-item:hover .dropdown-menu {
         transform: rotateX(0deg);
         visibility: visible;
